@@ -1,0 +1,21 @@
+p {
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.tabela {
+    margin: auto;
+    width: 50%;
+}
+
+a {
+    word-wrap: break-word;
+}
