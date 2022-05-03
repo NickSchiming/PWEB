@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+
+<body>
+    <script>
+        // 1 = pedra
+        // 2 = papel
+        // 3 = tesoura
+        function opcPedra(jogador) {
+            var rand = Math.random()
+            var computador;
+            if (rand < 0.33) {
+                computador = 'pedra'
+            } else if (rand >= 0.33 & rand < 0.66) {
+                computador = 'papel'
+            } else {
+                computador = 'tesoura'
+            }
+
+            switch (jogador) {
+                case 'pedra':
+                    if (computador == 'pedra') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Empate");
+                    } else if (computador == 'papel') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você perdeu");
+                    } else {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você ganhou");
+                    }
+                    break;
+                case 'papel':
+                    if (computador == 'papel') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Empate");
+                    } else if (computador == 'tesoura') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você perdeu");
+                    } else {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você ganhou");
+                    }
+                    break;
+                case 'tesoura':
+                    if (computador == 'tesoura') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Empate");
+                    } else if (computador == 'pedra') {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você perdeu");
+                    } else {
+                        alert("Jogador: " + jogador + "\nComputador: " + computador + "\nResultado: Você ganhou");
+                    }
+                    break;
+            }
+        }
+    </script>
+
+    <p><strong>Faça sua escolha</strong></p>
+    <br>
+    <input type="button" value="PEDRA" onclick="opcPedra('pedra');">
+    <br>
+    <input type="button" value="PAPEL" onclick="opcPedra('papel');">
+    <br>
+    <input type="button" value="TESOURA" onclick="opcPedra('tesoura');">
+
+    <style>
+        p {
+            text-align: center;
+            font-size: 30px;
+            font-family: sans-serif;
+        }
+        
+        input {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            font-family: sans-serif;
+        }
+    </style>
+
+</body>
+
+</html>
