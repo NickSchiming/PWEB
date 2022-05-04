@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <div class="container">
+        <div class="filho">
+            <h1><strong>Responda o questionario</strong></h1>
+            <br>
+            <form action="" id="form">
+                <p>Idade</p>
+                <input name="idIdade" type="number">
+
+                <br>
+
+                <p>Sexo</p>
+                Masculino:
+                <input name="idSexo" type="radio" value=1>
+                <br> Feminino:
+                <input name="idSexo" type="radio" value=2>
+                <br> Outro:
+                <input name="idSexo" type="radio" value=3>
+
+                <br>
+                <p>Opinião</p>
+                Otimo:
+                <input name="idOp" type="radio" value=4>
+                <br>Bom:
+                <input name="idOp" type="radio" value=3>
+                <br>Regular:
+                <input name="idOp" type="radio" value=2>
+                <br>Pessimo:
+                <input name="idOp" type="radio" value=1>
+
+                <br>
+                <br>
+                <input id="btnsub" type="submit" value="Submit">
+
+
+            </form>
+        </div>
+
+
+
+
+        <div class="filho">
+            <h1>Estatisticas:</h1>
+            <br>
+            <br>
+            <br>
+            <input id="btn" type="button" value="Mostrar estatisticas">
+            <p id="media">Media das idades: </p>
+            <p id="velha">Idade da pessoa mais velha: </p>
+            <p id="nova">Idade da pessoa mais nova: </p>
+            <p id="qtdePessimo">Quantidade de avaliações pessimas: </p>
+            <p id="pctgOB">Porcentagem de avaliações otimas e boas: </p>
+            <p>Contagem por sexo:</p>
+            <p id="contaSexo">Homens: Mulheres: Outro:</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var idade = [];
+        var sexo = [];
+        var opiniao = [];
+        var i = 0;
+
+
+        $(document).ready(function() {
+            $(document).on('submit', '#form', function() {
+                idade[i] = parseInt(document.forms.form.elements["idIdade"].value);
+                sexo[i] = parseInt(document.forms.form.elements["idSexo"].value);
+                opiniao[i] = parseInt(document.forms.form.elements["idOp"].value);
+
+                i++;
+
+                return false;
+            });
+        });
+
+        function media() {
+            var soma = 0;
+            for (let index = 0; index < idade.length; index++) {
+                soma += idade[index];
+            }
+            return soma / i;
+        }
+
+        function maisVelha() {
+            var maior = 0;
+            for (let index = 0; index < idade.length; index++) {
+                if (idade[index] > maior) {
+                    maior = idade[index];
+                }
+            }
+            return maior;
+        }
+
+        function maisNova() {
+            var menor = idade[0];
+            for (let index = 1; index < idade.length; index++) {
+                if (idade[index] < menor) {
+                    menor = idade[index];
+                }
+
+            }
+            return menor;
+        }
+
+        function qtdePessimo() {
+            var qtde = 0;
+            for (let index = 0; index < opiniao.length; index++) {
+                if (opiniao[index] == 1) {
+                    qtde++;
+                }
+            }
+            return qtde;
+        }
+
+        function pctgOB() {
+            var qtde = 0;
+            for (let index = 0; index < opiniao.length; index++) {
+                if (opiniao[index] == 4 || opiniao[index] == 3) {
+                    qtde++;
+                }
+            }
+            return (100 * (qtde / opiniao.length)).toFixed(2);
+        }
+
+        function contaSexo() {
+            var mulher = 0;
+            var homem = 0;
+            var outro = 0;
+
+            for (let index = 0; index < sexo.length; index++) {
+                if (sexo[index] == 1) {
+                    homem++;
+                } else if (sexo[index] == 2) {
+                    mulher++;
+                } else {
+                    outro++;
+                }
+            }
+            return "Homens: " + homem + " - Mulheres: " + mulher + " - Outro: " + outro;
+        }
+
+        document.getElementById('btn').onclick = function() {
+            document.getElementById("media").textContent = "Media das idades: " + media();
+            document.getElementById("velha").textContent = "Idade da pessoa mais velha: " + maisVelha();
+            document.getElementById("nova").textContent = "Idade da pessoa mais nova: " + maisNova();
+            document.getElementById("qtdePessimo").textContent = "Quantidade de avaliações pessimas: " + qtdePessimo();
+            document.getElementById("pctgOB").textContent = "Porcentagem de avaliações otimas e boas: " + pctgOB() + "%";
+            document.getElementById("contaSexo").textContent = contaSexo();
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: gray;
+        }
+        
+        .container {
+            display: flex;
+            margin-left: 80px;
+        }
+        
+        .filho {
+            flex: 1;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        
+        h1 {
+            font-size: 40px;
+        }
+    </style>
+</body>
+
+</html>
