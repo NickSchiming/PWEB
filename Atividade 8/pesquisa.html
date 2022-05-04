@@ -58,7 +58,7 @@
             <br>
             <br>
             <br>
-            <input id="btn" type="button" value="Mostrar estatisticas">
+            <br>
             <p id="media">Media das idades: </p>
             <p id="velha">Idade da pessoa mais velha: </p>
             <p id="nova">Idade da pessoa mais nova: </p>
@@ -86,6 +86,13 @@
                 opiniao[i] = parseInt(document.forms.form.elements["idOp"].value);
 
                 i++;
+
+                document.getElementById("media").textContent = "Media das idades: " + media();
+                document.getElementById("velha").textContent = "Idade da pessoa mais velha: " + maisVelha();
+                document.getElementById("nova").textContent = "Idade da pessoa mais nova: " + maisNova();
+                document.getElementById("qtdePessimo").textContent = "Quantidade de avaliações pessimas: " + qtdePessimo();
+                document.getElementById("pctgOB").textContent = "Porcentagem de avaliações otimas e boas: " + pctgOB() + "%";
+                document.getElementById("contaSexo").textContent = contaSexo();
 
                 return false;
             });
@@ -156,15 +163,6 @@
             }
             return "Homens: " + homem + " - Mulheres: " + mulher + " - Outro: " + outro;
         }
-
-        document.getElementById('btn').onclick = function() {
-            document.getElementById("media").textContent = "Media das idades: " + media();
-            document.getElementById("velha").textContent = "Idade da pessoa mais velha: " + maisVelha();
-            document.getElementById("nova").textContent = "Idade da pessoa mais nova: " + maisNova();
-            document.getElementById("qtdePessimo").textContent = "Quantidade de avaliações pessimas: " + qtdePessimo();
-            document.getElementById("pctgOB").textContent = "Porcentagem de avaliações otimas e boas: " + pctgOB() + "%";
-            document.getElementById("contaSexo").textContent = contaSexo();
-        }
     </script>
 
     <style>
@@ -184,7 +182,6 @@
         }
         
         h1 {
-            font-size: 40px;
         }
     </style>
 </body>
