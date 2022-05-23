@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <br> <input type="checkbox" name="ADS" id="ADS" onchange="ADS();"> Analise e desenvolvimento de sistemas:
+    <br> <input type="checkbox" name="PM" id="PM" onchange="PM();"> Projetos mecanicos:
+    <br> <input type="checkbox" name="SB" id="SB" onchange="SB();"> Sistemas biomedicos:
+    <br> <input type="checkbox" name="PO" id="PO" onchange="PO();"> Polímeros:
+</body>
+
+<script>
+    function ADS() {
+        if (confirm("Tem certeza que quer abrir esse curso?")) {
+            open("http://www.fatecsorocaba.edu.br/curso_ads.asp", "", "width=600,height=300");
+        }
+    }
+
+    function PM() {
+        if (confirm("Tem certeza que quer abrir esse curso?")) {
+            open("http://www.fatecsorocaba.edu.br/curso_proj.asp", "", "width=600,height=300");
+        }
+    }
+
+    function SB() {
+        if (confirm("Tem certeza que quer abrir esse curso?")) {
+            open("http://www.fatecsorocaba.edu.br/curso_sb.asp", "", "width=600,height=300");
+        }
+    }
+
+    function PO() {
+        if (confirm("Tem certeza que quer abrir esse curso?")) {
+            open("http://www.fatecsorocaba.edu.br/curso_pol.asp", "", "width=600,height=300");
+        }
+    }
+</script>
+
+</html>
