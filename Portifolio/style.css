@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+html {
+    background: radial-gradient(at top, rgb(129, 12, 12), rgb(0, 0, 0));
+    background-attachment: fixed;
+    height: 100%;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.caixa {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.caixa img {
+    width: 260px;
+}
+
+h1 {
+    position: absolute;
+    top: 30px;
+    left: 450px;
+    color: rgb(0, 195, 255);
+    text-shadow: 0 0 2px rgb(24, 219, 253), 0 0 5px rgb(36, 202, 252);
+    font-size: 40px;
+}
+
+nav {
+    position: absolute;
+    top: 35px;
+    right: 60px;
+}
+
+nav li {
+    display: block;
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+    color: rgb(255, 251, 0);
+    text-shadow: 0 0 2px rgb(253, 238, 24), 0 0 5px rgb(252, 220, 36);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 2px rgb(253, 24, 24), 0 0 5px rgb(252, 36, 36);
+    text-decoration: underline;
+}
+
+.linhas {
+    overflow: hidden;
+    text-align: center;
+    color: rgb(0, 195, 255);
+    margin-top: 0;
+    text-shadow: 0 0 2px rgb(24, 219, 253), 0 0 5px rgb(36, 202, 252);
+    font-size: 26px;
+}
+
+.linhas>span {
+    position: relative;
+    display: inline-block;
+}
+
+.linhas>span:before,
+.linhas>span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-bottom: 3px solid;
+    width: 40vw;
+    margin: 0 20px;
+    color: rgb(255, 0, 0);
+}
+
+.linhas>span:before {
+    right: 100%;
+}
+
+.linhas>span:after {
+    left: 100%;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+h2 input {
+    width: 150px;
+    margin-right: 70px;
+}
+
+h2 div {
+    transition: all .2s ease-in-out;
+}
+
+h2 div:hover {
+    transform: scale(1.2);
+}
+
+h2 p {
+    color: rgb(0, 195, 255);
+    text-shadow: 0 0 2px rgb(24, 219, 253), 0 0 5px rgb(36, 202, 252);
+    margin-top: 0;
+}
+
+h3 {
+    color: rgb(0, 195, 255);
+    text-shadow: 0 0 2px rgb(24, 219, 253), 0 0 5px rgb(36, 202, 252);
+    margin-left: 60px;
+}
+
+:root {
+    --yellow-color: #f9f002;
+    --border-color: #8ae66e;
+}
+
+.cyberpunk {
+    width: 600px;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--yellow-color);
+    border: 30px solid var(--yellow-color);
+    border-right: 5px solid var(--yellow-color);
+    border-left: 5px solid var(--yellow-color);
+    border-bottom: 24px solid var(--yellow-color);
+    background-color: #000;
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+}
+
+.cyberpunk.inverse {
+    border: none;
+    padding: 40px 15px 30px;
+    color: #000;
+    background-color: var(--yellow-color);
+    border-right: 2px solid var(--border-color);
+}
+
+.dotted,
+.dotted:before,
+.dotted:after {
+    background: var(--yellow-color);
+    background-image: radial-gradient(#00000021 1px, transparent 0);
+    background-size: 5px 5px;
+    background-position: -13px -3px;
+}
+
+.cyberpunk:before {
+    content: "P-14";
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    right: 25px;
+    padding: 2px 2px 0px 2px;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    color: #000;
+    background-color: var(--yellow-color);
+    border-left: 2px solid var(--border-color);
+}
+
+.cyberpunk.inverse:before {
+    content: "T-71";
+    right: 90px;
+    bottom: 9px;
+}
+
+.cyberpunk.inverse:before,
+.cyberpunk:before {
+    background-color: #000;
+    color: var(--yellow-color);
+}
